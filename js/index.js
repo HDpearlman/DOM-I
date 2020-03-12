@@ -45,5 +45,72 @@ let codeSnipped = document.getElementById("cta-img");
 
 codeSnipped.setAttribute('src','img/header-img.png')
 
-let nav = document.getElementsbyName('nav');
+let nav = document.getElementsByTagName("nav");
 
+
+let navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach((element, index) =>
+  element.textContent = siteContent.nav[`nav-item-${index+1}`]
+  );
+
+console.log(navLinks);
+
+// let logo = document.getElementById('cta-img');
+// l rewriting earlier code derp
+
+let sectionText = document.getElementsByClassName('cta-text');
+
+console.log(sectionText);
+
+sectionText[0].children[0].textContent = siteContent.cta.h1;
+
+sectionText[0].children[1].textContent = siteContent.cta.button;
+
+//
+
+let middleImg = document.getElementById('middle-img');
+
+middleImg.setAttribute(`src`, `img/mid-page-accent.jpg`);
+
+let topContent = document.getElementsByClassName('top-content');
+
+console.log(topContent)
+
+topContent[0].children[0].children[0].textContent = siteContent["main-content"]["features-h4"];
+topContent[0].children[0].children[1].textContent = siteContent["main-content"]["features-content"];
+
+topContent[0].children[1].children[0].textContent = siteContent["main-content"]["about-h4"];
+topContent[0].children[1].children[1].textContent = siteContent["main-content"]["about-content"];
+
+//
+
+let bottomContent = document.getElementsByClassName('bottom-content');
+
+console.log(bottomContent)
+
+//services
+bottomContent[0].children[0].children[0].textContent = siteContent["main-content"][`services-h4`]
+bottomContent[0].children[0].children[1].textContent = siteContent["main-content"]["services-content"]
+
+//product
+bottomContent[0].children[1].children[0].textContent = siteContent["main-content"]["product-h4"]
+bottomContent[0].children[1].children[1].textContent = siteContent["main-content"]["product-content"]
+
+//vision
+bottomContent[0].children[2].children[0].textContent = siteContent["main-content"]["vision-h4"]
+bottomContent[0].children[2].children[1].textContent = siteContent["main-content"]["vision-content"]
+
+let footerP = document.querySelector('footer p')
+
+console.log(footerP)
+footerP.textContent = siteContent.footer.copyright;
+
+//## Task 3: Add new content
+// * [ ] Change the color of the navigation text to be green.
+// * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+// * [ ] Check your work by looking at the [original html](original.html) in the browser
+
+navLinks.appendChild('my appended link');
+
+navLinks.prependChild('my prepended link');
