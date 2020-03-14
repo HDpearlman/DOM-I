@@ -45,10 +45,10 @@ let codeSnipped = document.getElementById("cta-img");
 
 codeSnipped.setAttribute('src','img/header-img.png')
 
-let nav = document.getElementsByTagName("nav");
+const nav = document.getElementsByTagName("nav");
 
 
-let navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('a');
 
 navLinks.forEach((element, index) =>
   element.textContent = siteContent.nav[`nav-item-${index+1}`]
@@ -111,6 +111,33 @@ footerP.textContent = siteContent.footer.copyright;
 // * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
 // * [ ] Check your work by looking at the [original html](original.html) in the browser
 
-navLinks.appendChild('my appended link');
+console.log(nav);
 
-navLinks.prependChild('my prepended link');
+// color change
+// nav[0].children.forEach((child) => {
+//   child.style.color = 'green'
+// } );
+
+// for(let i = 0; i < nav.length; i++){
+//   nav[i].style.color = 'green';
+// };
+
+// // 
+navLinks.forEach((child) => {
+  child.style.color = "green";
+})
+
+
+console.log(navLinks);
+
+const headerNav = document.querySelector('header nav')
+const navLinkHello = document.createElement('a');
+navLinkHello.textContent = 'hi there';
+headerNav.append(navLinkHello);
+
+console.log(headerNav);
+
+const navLinkGoodbye = document.createElement('a');
+navLinkGoodbye.textContent = 'good-bye';
+
+headerNav.prepend(navLinkGoodbye);
